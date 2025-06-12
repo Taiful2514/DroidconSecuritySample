@@ -13,6 +13,9 @@
         android:theme="@style/Theme.DroidconSecuritySample"
         tools:targetApi="31">
         <activity
+            android:name=".ui.PaidActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.DroidconSecuritySample">

@@ -23,6 +23,7 @@
 
 
     <Button
+        android:id="@+id/paidBtn"
         android:text="@string/paid_section"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
