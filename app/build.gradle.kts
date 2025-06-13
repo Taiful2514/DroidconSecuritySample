@@ -16,6 +16,7 @@ if (keystorePropertiesFile.exists()) {
 android {
     namespace = "com.example.droidconsecuritysample"
     compileSdk = 35
+    android.buildFeatures.buildConfig = true
 
     defaultConfig {
         applicationId = "com.example.droidconsecuritysample"
@@ -46,7 +47,7 @@ android {
         debug {
             isShrinkResources = false
             isMinifyEnabled = false
-            isDebuggable = true
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
