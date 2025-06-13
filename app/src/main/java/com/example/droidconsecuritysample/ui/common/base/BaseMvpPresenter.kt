@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
  * @author taiful
  * @since 14/6/25
  */
-internal open class BaseMvpPresenter<V : MvpView>(protected val compositeDisposable: CompositeDisposable) :
+open class BaseMvpPresenter<V : MvpView>(protected val compositeDisposable: CompositeDisposable) :
     MvpPresenter<V> {
 
     protected var view: V? = null

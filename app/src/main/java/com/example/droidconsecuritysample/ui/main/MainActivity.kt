@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.droidconsecuritysample.R
 import com.example.droidconsecuritysample.ui.paid.PaidActivity
+import com.example.droidconsecuritysample.ui.post.view.PostActivity
 import com.example.droidconsecuritysample.util.addSingleClickListener
 
 /**
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this, PaidActivity::class.java))
             }
             bottomSheet.show(supportFragmentManager, "KeyInputSheet")
+        }
+
+        findViewById<Button>(R.id.postListBtn).addSingleClickListener {
+            startActivity(Intent(this, PostActivity::class.java))
         }
     }
 }

@@ -1,21 +1,19 @@
 package com.example.droidconsecuritysample.ui.common.di.modules
 
 import com.example.droidconsecuritysample.BuildConfig
+import com.example.droidconsecuritysample.data.network.ApiHelper
+import com.example.droidconsecuritysample.data.network.ApiHelperImpl
 import com.example.droidconsecuritysample.data.network.ApiService
 import com.example.droidconsecuritysample.ui.common.di.ApplicationScope
-import com.example.droidconsecuritysample.util.Constant
 import com.example.droidconsecuritysample.util.Constant.BASE_URL
 import dagger.Module
 import dagger.Provides
-import okhttp3.CertificatePinner
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Named
 
 /**
  * @author taiful
@@ -23,6 +21,12 @@ import javax.inject.Named
  */
 @Module
 class NetworkModule {
+
+    @Provides
+    @ApplicationScope
+    fun apiHelper(apiService: ApiService): ApiHelper {
+        return ApiHelperImpl(apiService)
+    }
 
     @Provides
     @ApplicationScope

@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardCornerRadius="12dp"
+    android:background="@color/white"
     card_view:cardElevation="4dp"
     android:layout_margin="8dp">
 

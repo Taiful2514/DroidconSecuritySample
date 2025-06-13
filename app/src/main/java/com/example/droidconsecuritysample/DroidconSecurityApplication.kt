@@ -1,6 +1,9 @@
 package com.example.droidconsecuritysample
 
 import android.app.Application
+import com.example.droidconsecuritysample.ui.common.di.component.AppComponent
+import com.example.droidconsecuritysample.ui.common.di.component.DaggerAppComponent
+import io.reactivex.rxjava3.plugins.RxJavaPlugins
 
 /**
  * @author taiful
@@ -8,7 +11,22 @@ import android.app.Application
  */
 class DroidconSecurityApplication : Application() {
 
+    val appComponent: AppComponent by lazy {
+        DaggerAppComponent.builder()
+            .build()
+    }
+
     override fun onCreate() {
         super.onCreate()
+        instance = this
+        RxJavaPlugins.setErrorHandler { throwable: Throwable? ->
+            // Do nothing
+        }
+    }
+
+    companion object {
+        @get:Synchronized
+        var instance: DroidconSecurityApplication? = null
+            private set
     }
 }
