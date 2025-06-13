@@ -20,3 +20,11 @@ keystore.properties
 app/seeds.txt
 app/mapping.txt
 app/unused.txt
+
+app-release.dm
+output-metadata.json
+
+# Log files
+*.log
+
+/app/release/
