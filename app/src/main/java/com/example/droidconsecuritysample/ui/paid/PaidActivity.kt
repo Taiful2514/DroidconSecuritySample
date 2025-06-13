@@ -1,10 +1,7 @@
-package com.example.droidconsecuritysample.ui
+package com.example.droidconsecuritysample.ui.paid
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.droidconsecuritysample.R
 
 /**

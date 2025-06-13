@@ -10,13 +10,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".DroidconSecurityApplication"
         android:theme="@style/Theme.DroidconSecuritySample"
         tools:targetApi="31">
         <activity
-            android:name=".ui.PaidActivity"
+            android:name=".ui.paid.PaidActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.DroidconSecuritySample">
             <intent-filter>

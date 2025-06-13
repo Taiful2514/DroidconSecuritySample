@@ -12,6 +12,7 @@ navigationFragmentKtx = "2.6.0"
 navigationUiKtx = "2.6.0"
 activity = "1.8.0"
 rxBinding4 = "4.0.0"
+dagger="2.50"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -25,8 +26,11 @@ androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navi
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 rx-binding4 = { group = "com.jakewharton.rxbinding4", name = "rxbinding", version.ref = "rxBinding4" }
+dagger2 = { group = "com.google.dagger", name = "dagger", version.ref = "dagger" }
+dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt" }
 

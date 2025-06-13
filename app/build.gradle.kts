@@ -4,6 +4,7 @@ import java.util.*
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 val keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -84,6 +85,8 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.rx.binding4)
     implementation(libs.androidx.activity)
+    implementation(libs.dagger2)
+    kapt(libs.dagger.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

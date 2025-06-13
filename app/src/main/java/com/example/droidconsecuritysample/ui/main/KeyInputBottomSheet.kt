@@ -1,4 +1,4 @@
-package com.example.droidconsecuritysample.ui
+package com.example.droidconsecuritysample.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +12,10 @@ import com.example.droidconsecuritysample.util.Constant.PAID_KEY
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputLayout
 
+/**
+ * @author taiful
+ * @since 12/6/25
+ */
 class KeyInputBottomSheet(
     private val onKeyEnteredSuccess: () -> Unit
 ) : BottomSheetDialogFragment() {

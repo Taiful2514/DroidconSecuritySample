@@ -1,3 +1,8 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="default_16dp">16dp</dimen>
+    <dimen name="default_6dp">6dp</dimen>
+    <dimen name="default_24dp">24dp</dimen>
+    <dimen name="default_24sp">24sp</dimen>
+    <dimen name="default_2dp">2dp</dimen>
 </resources>
