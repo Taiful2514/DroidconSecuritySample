@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+../.DS_Store
+*.apk
+.idea
+keystore.properties
+app/seeds.txt
+app/mapping.txt
+app/unused.txt
