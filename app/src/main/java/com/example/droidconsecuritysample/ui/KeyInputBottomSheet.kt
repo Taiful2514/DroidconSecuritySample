@@ -8,7 +8,6 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.core.widget.addTextChangedListener
 import com.example.droidconsecuritysample.R
-import com.example.droidconsecuritysample.util.Constant
 import com.example.droidconsecuritysample.util.Constant.PAID_KEY
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputLayout
