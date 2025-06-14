@@ -9,6 +9,8 @@ import android.widget.EditText
 import androidx.core.widget.addTextChangedListener
 import com.example.droidconsecuritysample.R
 import com.example.droidconsecuritysample.util.Constant.PAID_KEY
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputLayout
 
@@ -19,6 +21,11 @@ import com.google.android.material.textfield.TextInputLayout
 class KeyInputBottomSheet(
     private val onKeyEnteredSuccess: () -> Unit
 ) : BottomSheetDialogFragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setStyle(STYLE_NORMAL, R.style.BottomSheetThemeWithInput)
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

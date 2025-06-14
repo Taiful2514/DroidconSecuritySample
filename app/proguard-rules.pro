@@ -19,3 +19,72 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+# Parceler library
+
+# Retrofit
+-keepattributes Signature
+-keepattributes EnclosingMethod
+-keepattributes InnerClasses
+-keepattributes Annotation
+
+-keep class retrofit2.** { *; }
+-keep interface retrofit2.** { *; }
+-dontwarn retrofit2.**
+
+# For OkHttp (often used with Retrofit)
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-dontwarn okhttp3.**
+
+# For Converter Factories (e.g., GsonConverterFactory)
+-keep class retrofit2.converter.gson.** { *; }
+-dontwarn retrofit2.converter.gson.**
+
+# RxJava3 Adapter for Retrofit
+-keep class retrofit2.adapter.rxjava3.** { *; }
+-dontwarn retrofit2.adapter.rxjava3.**
+
+# Keep RxJava3 types if used in method signatures
+-keep class io.reactivex.rxjava3.** { *; }
+-dontwarn io.reactivex.rxjava3.**
+
+
+# Gson
+-keepattributes *Annotation*
+
+-keep class sun.misc.Unsafe { *; } # Important for Android API < 26
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.reflect.TypeToken { *; }
+-keep class * implements com.google.gson.TypeAdapterFactory
+-keep class * implements com.google.gson.JsonSerializer
+-keep class * implements com.google.gson.JsonDeserializer
+
+# Keep all classes that are annotated with @SerializedName
+-keepclassmembers class * {
+  @com.google.gson.annotations.SerializedName <fields>;
+}
+
+# Don't warn about missing stuff that Gson handles
+-dontwarn com.google.gson.**
+
+# Model classes
+-keep class com.example.droidconsecuritysample.data.dto.** { *; }
+
+# RecyclerView ViewHolder
+-keep public class * extends androidx.recyclerview.widget.RecyclerView$Adapter { *; }
+-keep public class * extends androidx.recyclerview.widget.RecyclerView$ViewHolder { *; }
+-keep class **$*ViewHolder { *; }
+
+
+# Android views
+-keep class com.google.android.material.bottomsheet.BottomSheetBehavior { *; }
+
+-keepclasseswithmembers class * {
+   public <init>(android.content.Context, android.util.AttributeSet);
+}
+-keepclasseswithmembers class * {
+   public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+-keepclassmembers class * extends android.app.Activity {
+  public void *(android.view.View);
+}
