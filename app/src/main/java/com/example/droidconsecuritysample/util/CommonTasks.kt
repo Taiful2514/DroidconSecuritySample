@@ -5,6 +5,7 @@ import android.widget.Toast
 import com.example.droidconsecuritysample.DroidconSecurityApplication.Companion.instance
 import com.example.droidconsecuritysample.ui.common.di.component.AppComponent
 import com.example.droidconsecuritysample.util.Constant.EMPTY_STRING
+import com.example.droidconsecuritysample.util.Constant.SSL_PIN
 
 /**
  * @author taiful

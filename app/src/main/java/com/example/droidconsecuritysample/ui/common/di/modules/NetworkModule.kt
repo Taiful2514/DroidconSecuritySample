@@ -6,8 +6,11 @@ import com.example.droidconsecuritysample.data.network.ApiHelperImpl
 import com.example.droidconsecuritysample.data.network.ApiService
 import com.example.droidconsecuritysample.ui.common.di.ApplicationScope
 import com.example.droidconsecuritysample.util.Constant.BASE_URL
+import com.example.droidconsecuritysample.util.Constant.OKHTTP_SSL_PIN
+import com.example.droidconsecuritysample.util.Constant.PINNING_URL
 import dagger.Module
 import dagger.Provides
+import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -48,7 +51,8 @@ class NetworkModule {
     @Provides
     @ApplicationScope
     fun okhttpClient(
-        loggingInterceptor: HttpLoggingInterceptor
+        loggingInterceptor: HttpLoggingInterceptor,
+        certificatePinner: CertificatePinner,
     ): OkHttpClient {
         val builder = OkHttpClient.Builder()
         builder.readTimeout(60, TimeUnit.SECONDS)
@@ -57,6 +61,7 @@ class NetworkModule {
         if (BuildConfig.DEBUG) {
             builder.addInterceptor(loggingInterceptor)
         }
+        builder.certificatePinner(certificatePinner)
         return builder.build()
     }
 
@@ -64,5 +69,13 @@ class NetworkModule {
     @ApplicationScope
     fun interceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    }
+
+    @Provides
+    @ApplicationScope
+    fun certificatePinner(): CertificatePinner {
+        return CertificatePinner.Builder()
+            .add(PINNING_URL, OKHTTP_SSL_PIN)
+            .build()
     }
 }
