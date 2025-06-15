@@ -21,6 +21,32 @@
 #-renamesourcefileattribute SourceFile
 # Parceler library
 
+# Most Important One
+-repackageclasses 'abcXYZ'
+-obfuscationdictionary method-dictionary.txt
+-classobfuscationdictionary class-dictionary.txt
+-overloadaggressively
+
+-printmapping mapping.txt # Generates the mapping file for original-to-obfuscated class names. Required for decoding obfuscated stack traces (especially for crash reports).
+
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/* # Excludes certain optimizations that may be risky or unstable (e.g., arithmetic simplifications, field/class merging). This can avoid runtime issues, but limits performance improvements.
+-optimizationpasses 3 # Tells ProGuard to repeat the optimization step 3 times. More passes can give better optimization but may slightly increase build time.
+
+# Remove Logs
+-assumenosideeffects class android.util.Log {
+    public static int v(...);
+    public static int d(...);
+    public static int i(...);
+    public static int w(...);
+    public static int e(...);
+}
+
+# Optinal- remove the koltin prints
+-assumenosideeffects class kotlin.io.* {
+    public static void println(...);
+    public static void print(...);
+}
+
 # Retrofit
 -keepattributes Signature
 -keepattributes EnclosingMethod
