@@ -19,7 +19,7 @@ class DroidconSecurityApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        RxJavaPlugins.setErrorHandler { throwable: Throwable? ->
+        RxJavaPlugins.setErrorHandler {
             // Do nothing
         }
     }
