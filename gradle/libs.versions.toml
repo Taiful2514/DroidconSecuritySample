@@ -12,11 +12,12 @@ navigationFragmentKtx = "2.6.0"
 navigationUiKtx = "2.6.0"
 activity = "1.8.0"
 rxBinding4 = "4.0.0"
-dagger="2.50"
+dagger = "2.50"
 retrofit = "2.9.0"
 okhttp = "4.12.0"
 gson = "2.10.1"
 rxjava3Adapter = "2.9.0"
+dataStore = "1.1.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

@@ -1,4 +1,4 @@
-package com.example.droidconsecuritysample.ui.common.di
+package com.example.droidconsecuritysample.common.di
 
 import dagger.Module
 import dagger.Provides

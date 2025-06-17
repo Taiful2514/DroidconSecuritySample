@@ -1,8 +1,9 @@
 package com.example.droidconsecuritysample
 
 import android.app.Application
-import com.example.droidconsecuritysample.ui.common.di.component.AppComponent
-import com.example.droidconsecuritysample.ui.common.di.component.DaggerAppComponent
+import com.example.droidconsecuritysample.common.di.component.AppComponent
+import com.example.droidconsecuritysample.common.di.component.DaggerAppComponent
+import com.example.droidconsecuritysample.common.di.modules.ContextModule
 import io.reactivex.rxjava3.plugins.RxJavaPlugins
 
 /**
@@ -13,6 +14,7 @@ class DroidconSecurityApplication : Application() {
 
     val appComponent: AppComponent by lazy {
         DaggerAppComponent.builder()
+            .contextModule(ContextModule(this))
             .build()
     }
 

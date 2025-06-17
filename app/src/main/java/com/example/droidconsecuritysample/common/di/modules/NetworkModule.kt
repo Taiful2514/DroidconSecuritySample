@@ -1,10 +1,10 @@
-package com.example.droidconsecuritysample.ui.common.di.modules
+package com.example.droidconsecuritysample.common.di.modules
 
 import com.example.droidconsecuritysample.BuildConfig
 import com.example.droidconsecuritysample.data.network.ApiHelper
 import com.example.droidconsecuritysample.data.network.ApiHelperImpl
 import com.example.droidconsecuritysample.data.network.ApiService
-import com.example.droidconsecuritysample.ui.common.di.ApplicationScope
+import com.example.droidconsecuritysample.common.di.ApplicationScope
 import com.example.droidconsecuritysample.util.Constant.BASE_URL
 import com.example.droidconsecuritysample.util.Constant.OKHTTP_SSL_PIN
 import com.example.droidconsecuritysample.util.Constant.PINNING_URL
