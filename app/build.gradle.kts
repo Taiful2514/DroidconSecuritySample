@@ -74,8 +74,14 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-}
 
+    // --- JNI/NDK Configuration ---
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt") // Path to your CMake build script
+        }
+    }
+}
 dependencies {
 
     implementation(libs.androidx.core.ktx)

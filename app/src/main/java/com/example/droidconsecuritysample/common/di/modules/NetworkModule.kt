@@ -5,10 +5,8 @@ import com.example.droidconsecuritysample.data.network.ApiHelper
 import com.example.droidconsecuritysample.data.network.ApiHelperImpl
 import com.example.droidconsecuritysample.data.network.ApiService
 import com.example.droidconsecuritysample.common.di.ApplicationScope
-import com.example.droidconsecuritysample.util.Constant.BASE_URL
-import com.example.droidconsecuritysample.util.Constant.OKHTTP_SSL_PIN
-import com.example.droidconsecuritysample.util.Constant.PINNING_URL
 import com.example.droidconsecuritysample.util.CustomInterceptor
+import com.example.droidconsecuritysample.util.SecurityUtils
 import dagger.Module
 import dagger.Provides
 import okhttp3.CertificatePinner
@@ -43,7 +41,7 @@ class NetworkModule {
     @ApplicationScope
     fun retrofit(client: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(SecurityUtils.getBaseUrl())
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .client(client)
@@ -85,7 +83,7 @@ class NetworkModule {
     @ApplicationScope
     fun certificatePinner(): CertificatePinner {
         return CertificatePinner.Builder()
-            .add(PINNING_URL, OKHTTP_SSL_PIN)
+            .add(SecurityUtils.pinningUrl(), "sha256/${SecurityUtils.getSSLPin()}")
             .build()
     }
 }
