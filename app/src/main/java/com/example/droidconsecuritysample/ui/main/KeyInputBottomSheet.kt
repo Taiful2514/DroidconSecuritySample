@@ -1,4 +1,4 @@
-package com.example.droidconsecuritysample.ui
+package com.example.droidconsecuritysample.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,14 +8,24 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.core.widget.addTextChangedListener
 import com.example.droidconsecuritysample.R
-import com.example.droidconsecuritysample.util.Constant
 import com.example.droidconsecuritysample.util.Constant.PAID_KEY
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputLayout
 
+/**
+ * @author taiful
+ * @since 12/6/25
+ */
 class KeyInputBottomSheet(
     private val onKeyEnteredSuccess: () -> Unit
 ) : BottomSheetDialogFragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setStyle(STYLE_NORMAL, R.style.BottomSheetThemeWithInput)
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

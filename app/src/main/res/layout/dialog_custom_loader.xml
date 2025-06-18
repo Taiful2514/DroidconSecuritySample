@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_custom_loader">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:indeterminate="true"
+        app:indicatorSize="64dp"
+        app:trackThickness="@dimen/default_6dp"
+        app:trackColor="#EEF5FF" />
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/default_16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/default_16dp"
+        android:gravity="center"
+        android:text="@string/loading"
+        android:textColor="@color/black"
+        android:textSize="@dimen/default_24sp" />
+
+    <TextView
+        android:id="@+id/descriptionTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleTv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/default_16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="@dimen/default_16dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/default_2dp"
+        android:text="@string/please_wait_a_few_moments"
+        android:textColor="#5A6770"
+        android:textSize="@dimen/default_16dp" />
+
+</RelativeLayout>

@@ -1,14 +1,14 @@
-package com.example.droidconsecuritysample.ui
+package com.example.droidconsecuritysample.ui.main
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.droidconsecuritysample.R
+import com.example.droidconsecuritysample.ui.paid.PaidActivity
+import com.example.droidconsecuritysample.ui.post.view.PostActivity
+import com.example.droidconsecuritysample.util.CommonTasks.appComponent
 import com.example.droidconsecuritysample.util.addSingleClickListener
 
 /**
@@ -20,12 +20,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         findViewById<Button>(R.id.paidBtn).addSingleClickListener {
             val bottomSheet = KeyInputBottomSheet {
                 startActivity(Intent(this, PaidActivity::class.java))
             }
             bottomSheet.show(supportFragmentManager, "KeyInputSheet")
+        }
+
+        findViewById<Button>(R.id.postListBtn).addSingleClickListener {
+            startActivity(Intent(this, PostActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.accessSharedPreferenceBtn).addSingleClickListener {
+            appComponent.appSession.userName = "Hello"
+            Log.d("pref-log", "onCreate: ${appComponent.appSession.userName}")
         }
     }
 }
