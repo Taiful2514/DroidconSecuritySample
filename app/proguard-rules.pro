@@ -32,26 +32,6 @@
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/* # Excludes certain optimizations that may be risky or unstable (e.g., arithmetic simplifications, field/class merging). This can avoid runtime issues, but limits performance improvements.
 -optimizationpasses 3 # Tells ProGuard to repeat the optimization step 3 times. More passes can give better optimization but may slightly increase build time.
 
-# Remove Logs
--assumenosideeffects class android.util.Log {
-    public static int v(...);
-    public static int d(...);
-    public static int i(...);
-    public static int w(...);
-    public static int e(...);
-}
-
-# Optinal- remove the koltin prints
--assumenosideeffects class kotlin.io.* {
-    public static void println(...);
-    public static void print(...);
-}
-
-# Optional: Strip System.out.println
--assumenosideeffects class java.lang.System {
-    public static java.io.PrintStream out;
-}
-
 # Retrofit
 -keepattributes Signature
 -keepattributes EnclosingMethod
