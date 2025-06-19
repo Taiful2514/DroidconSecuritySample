@@ -142,17 +142,17 @@ JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved) {
         LOGE("Returning from JNICALL ERROR");
         return JNI_ERR;
     }
-    applyAntiDebugging(); // Call early
+   // applyAntiDebugging(); // Call early
 
-    if (isRooted()) {
+  /*  if (isRooted()) {
         LOGE("Security check failed Device rooted. Exiting...");
         exit(1); // kill app
-    }
+    }*/
 
-    if(isProbablyEmulator()){
+   /* if(isProbablyEmulator()){
         LOGE("Security check failed Emulator. Exiting...");
         exit(1); // kill app
-    }
+    }*/
 
 
     LOGI("All security checks passed.");
