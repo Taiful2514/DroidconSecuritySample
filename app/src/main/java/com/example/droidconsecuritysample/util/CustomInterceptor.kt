@@ -22,8 +22,6 @@ class CustomInterceptor : Interceptor {
                 return response
             }
         }
-        android.os.Process.killProcess(android.os.Process.myPid())
-        response.close()
-        return response
+        throw Exception()
     }
 }
