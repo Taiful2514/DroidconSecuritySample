@@ -29,7 +29,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginTop="@dimen/default_16dp"
-        android:text="SSL pinning okhttp"
+        android:text="Custom SSL pinning"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
